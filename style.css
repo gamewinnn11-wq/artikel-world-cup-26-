@@ -1,0 +1,359 @@
+/* =====================================================
+   style.css — Piala Dunia FIFA 2026
+   Demo CSS Basics: font-face, colors, box model, borders, spacing
+   ===================================================== */
+
+/* @font-face untuk font custom */
+@font-face {
+  font-family: 'FootballFont';
+  src: url('wcd_p5_examples/font1.ttf');
+}
+
+/* ── RESET & BASE ─────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #0F1536;
+  background-color: #F0F5FF;
+  line-height: 1.6;
+}
+
+/* ── NAVIGATION ───────────────────────────────── */
+nav {
+  background-color: #1E2761;
+  padding: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  display: block;
+  padding: 14px 20px;
+  color: #CADCFC;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  background-color: #F2C94C;
+  color: #1E2761;
+}
+
+/* ── PAGE HEADER ──────────────────────────────── */
+.page-header {
+  background-color: #1E2761;
+  color: #FFFFFF;
+  padding: 48px 40px 36px;
+  border-bottom: 6px solid #F2C94C;
+}
+
+.page-header h1 {
+  font-family: 'FootballFont', Georgia, serif;
+  font-size: 42px;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  font-size: 16px;
+  color: #CADCFC;
+  font-style: italic;
+}
+
+/* ── MAIN CONTAINER ───────────────────────────── */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* ── SECTION BLOCKS ───────────────────────────── */
+section {
+  margin-bottom: 64px;
+}
+
+.section-label {
+  font-family: 'FootballFont', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #F2C94C;
+  background-color: #1E2761;
+  display: inline-block;
+  padding: 4px 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+section h2 {
+  font-family: 'FootballFont', Georgia, serif;
+  font-size: 28px;
+  color: #1E2761;
+  margin-bottom: 6px;
+  border-left: 5px solid #F2C94C;
+  padding-left: 14px;
+}
+
+section p.section-desc {
+  font-size: 14px;
+  color: #5A6182;
+  font-style: italic;
+  margin-bottom: 28px;
+  padding-left: 19px;
+}
+
+/* ── DEMO CARD ────────────────────────────────── */
+.demo-card {
+  background-color: #FFFFFF;
+  border: 1px solid #DCE3F5;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 20px;
+}
+
+.demo-card h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #5A6182;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #DCE3F5;
+  padding-bottom: 8px;
+}
+
+/* ── HIGHLIGHT & BADGE ───────────────────────── */
+.highlight {
+  background-color: #F2C94C;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #0F1535;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #1E2761;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin: 4px;
+}
+
+.badge-green {
+  background-color: #5EA854;
+}
+
+.badge-red {
+  background-color: #C44545;
+}
+
+.badge-yellow {
+  background-color: #F2C94C;
+  color: #1E2761;
+}
+
+/* ── COLOR GRID ───────────────────────────────– */
+.color-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.color-swatch {
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  min-width: 160px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.color-navy { background-color: #1E2761; }
+.color-light-blue { background-color: #CADCFC; color: #1E2761; }
+.color-gold { background-color: #F2C94C; color: #1E2761; }
+.color-green { background-color: #5EA854; }
+.color-red { background-color: #C44545; }
+.color-gray { background-color: #5A6182; }
+
+/* ── FONT DEMOS ───────────────────────────────– */
+.font-custom {
+  font-family: 'FootballFont', Georgia, serif;
+  font-size: 22px;
+  color: #1E2761;
+  margin-bottom: 8px;
+}
+
+.font-arial {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #5A6182;
+  margin-bottom: 8px;
+}
+
+.font-georgia {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: #5A6182;
+  margin-bottom: 8px;
+}
+
+.font-mono {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  color: #E0E6F5;
+  background-color: #1A1F3A;
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+/* font sizes */
+.size-10 { font-size: 10px; }
+.size-14 { font-size: 14px; }
+.size-18 { font-size: 18px; }
+.size-24 { font-size: 24px; }
+.size-32 { font-size: 32px; }
+
+/* font weights */
+.fw-300  { font-weight: 300; }
+.fw-400  { font-weight: 400; }
+.fw-700  { font-weight: 700; }
+.fw-900  { font-weight: 900; }
+
+/* ── BOX MODEL DEMO ───────────────────────────– */
+.box-margin {
+  background-color: #FFF3CD;
+  border: 2px dashed #D97706;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.box-border {
+  background-color: #FFE0B2;
+  border: 4px solid #D97706;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.box-padding {
+  background-color: #C8E6C9;
+  border: 2px solid #5EA854;
+  padding: 24px;
+  margin-bottom: 10px;
+}
+
+.box-content {
+  background-color: #CADCFC;
+  border: 2px solid #1E2761;
+  padding: 16px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  color: #1E2761;
+}
+
+/* ── BORDER DEMOS ─────────────────────────────– */
+.border-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.border-demo {
+  padding: 14px 20px;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  background-color: #FFFFFF;
+  min-width: 180px;
+}
+
+.b-solid   { border: 2px solid #1E2761; }
+.b-dashed  { border: 2px dashed #C44545; }
+.b-dotted  { border: 2px dotted #5EA854; }
+.b-radius  { border: 2px solid #1E2761; border-radius: 12px; }
+.b-pill    { border: 2px solid #1E2761; border-radius: 50px; }
+.b-circle  { border: 2px solid #1E2761; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; }
+.b-thick   { border: 6px solid #F2C94C; }
+.b-left    { border: none; border-left: 5px solid #F2C94C; background-color: #FFFBEA; }
+
+/* ── IMAGE DEMOS ──────────────────────────────– */
+.img-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.img-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.img-item span {
+  font-size: 12px;
+  color: #5A6182;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+}
+
+.img-normal   { width: 200px; height: 150px; object-fit: cover; }
+.img-small    { width: 80px;  height: 80px;  object-fit: cover; }
+.img-circle   { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; }
+.img-bordered { width: 180px; height: 130px; object-fit: cover; border: 4px solid #1E2761; }
+.img-rounded  { width: 180px; height: 130px; object-fit: cover; border-radius: 16px; }
+.img-faded    { width: 150px; height: 110px; object-fit: cover; opacity: 0.4; }
+
+/* ── SPACING DEMO ─────────────────────────────– */
+.spacing-demo-wrap {
+  background-color: #F6F8FE;
+  border: 1px dashed #DCE3F5;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.spacing-demo {
+  background-color: #CADCFC;
+  color: #1E2761;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  display: inline-block;
+}
+
+/* ── ID SELECTOR ──────────────────────────────– */
+#special-box {
+  background-color: #EEF3FF;
+  border: 2px solid #1E2761;
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-weight: bold;
+  color: #1E2761;
+}
+
+/* ── FOOTER ───────────────────────────────────– */
+footer {
+  background-color: #1E2761;
+  color: #CADCFC;
+  text-align: center;
+  padding: 24px;
+  font-size: 13px;
+  border-top: 4px solid #F2C94C;
+  margin-top: 40px;
+}
