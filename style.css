@@ -1,0 +1,646 @@
+/* ==========================================================================
+   FIFA WORLD CUP 2026™ - CLEAN, MODERN, MINIMALIST & ELEGANT CSS
+   Desain UI/UX Profesional Tanpa Framework (Murni Vanilla CSS)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. TIPOGRAFI & WARNA (Clean Aesthetic)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+:root {
+    /* Warna Background Utama: Off-white yang lembut */
+    --bg-main: #f4f7f6;
+    --bg-white: #ffffff;
+    
+    /* Warna Teks: Abu-abu gelap kehitaman (kontras & nyaman di mata) */
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    
+    /* Warna Aksen/Primary: Biru elegan */
+    --primary-color: #1d4ed8;       /* Royal Blue yang Elegan */
+    --primary-dark: #0f172a;        /* Deep Slate Blue untuk Header Tabel/Judul */
+    --primary-light: #eff6ff;       /* Soft Blue Accent */
+    
+    /* Warna Aksen Sekunder */
+    --accent-emerald: #10b981;
+    --accent-amber: #f59e0b;
+    
+    /* Properti Desain Minimalis */
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+    --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.06);
+    --shadow-header: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --radius-md: 10px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   2. SPACING & BASE RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6; /* Wajib: Teks paragraf lebih nyaman dibaca */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   3. NAVIGASI (HEADER) - Sticky, Putih Solid, Shadow Tipis
+   ========================================================================== */
+.site-header {
+    background-color: var(--bg-white); /* Wajib: Warna background putih solid */
+    position: sticky;                  /* Wajib: Sticky di atas layar */
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-header);  /* Wajib: Box-shadow bawah sangat tipis dan lembut */
+    padding: 1.25rem 0;
+    transition: var(--transition-smooth);
+}
+
+/* Container untuk header agar sejajar dengan konten utama */
+.site-header .logo-container,
+.site-header .main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px; /* Sejajar dengan container utama */
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.site-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    letter-spacing: -0.5px;
+    text-decoration: none;
+}
+
+.main-nav .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+/* Wajib: Efek hover menu link (berubah warna & garis bawah smooth) */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition-smooth);
+    border-radius: 2px;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   4. LAYOUT UTAMA & CONTAINER (Pusatkan Konten max-width: 1000px)
+   ========================================================================== */
+.main-content {
+    max-width: 1000px; /* Wajib: Pusatkan konten maksimal 1000px */
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+/* Wajib: Ruang kosong lega (minimal padding 2rem pada setiap section) */
+.section {
+    padding: 3.5rem 0;
+    margin-bottom: 2rem;
+    scroll-margin-top: 90px;
+}
+
+.section-header {
+    margin-bottom: 2.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 1.5rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    letter-spacing: -0.5px;
+    margin-bottom: 0.35rem;
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.06);
+    margin: 2rem 0;
+}
+
+/* ==========================================================================
+   5. ELEMEN VISUAL: HERO SECTION (FLEXBOX)
+   ========================================================================== */
+.hero-content {
+    display: flex;
+    flex-wrap: wrap; /* Wajib: Responsif */
+    align-items: stretch;            /* Wajib: Agar gambar logo memanjang sejajar dengan tinggi teks artikel */
+    gap: 2.5rem;
+    background-color: var(--bg-white);
+    padding: 2.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-medium);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.hero-content .image-wrapper {
+    flex: 1 1 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-content .article-body {
+    flex: 1 1 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* ==========================================================================
+   6. ATURAN STYLING GAMBAR (Wajib: border-radius 12px, object-fit, shadow)
+   ========================================================================== */
+.image-wrapper, .host-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg); /* Wajib: border-radius 12px */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); /* Wajib: Sedikit box-shadow */
+    background-color: #000000;
+}
+
+img, .featured-image, .stadium-image {
+    width: 100%;
+    max-width: 100%;                 /* Wajib: Mengecil proporsional */
+    height: 280px;
+    object-fit: cover;               /* Wajib: object-fit cover */
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Khusus untuk gambar logo di Hero Section agar memanjang ke bawah sejajar dengan teks */
+.hero-content .featured-image {
+    height: 100%;
+    min-height: 420px;
+    object-fit: contain;
+    background-color: #000000;
+}
+
+.image-wrapper:hover img,
+.host-image-wrapper:hover img {
+    transform: scale(1.04);
+}
+
+.image-caption, .host-caption {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+/* ==========================================================================
+   7. STYLING FORMATTING TEKS (<mark>, <b>, <strong>, <i>, <em>, <u>)
+   ========================================================================== */
+p {
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.6; /* Wajib: line-height 1.6 */
+}
+
+.intro-paragraph {
+    font-size: 1.08rem;
+    color: var(--primary-dark);
+    font-weight: 400;
+}
+
+b, strong {
+    color: var(--primary-color); /* Biru elegan untuk penekanan */
+    font-weight: 600;
+}
+
+i, em {
+    color: #047857; /* Emerald Dark yang elegan */
+    font-style: italic;
+}
+
+u {
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+/* Wajib: Elemen <mark> kuning pastel lembut dengan sudut membulat */
+mark {
+    background-color: #fef9c3;       /* Kuning pastel lembut */
+    color: #854d0e;                  /* Teks cokelat keemasan hangat */
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;              /* Sudut sedikit membulat */
+    font-weight: 500;
+    display: inline-block;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   8. ELEMEN VISUAL: TABEL KLASEMEN (Bersih, Tanpa Border Tebal, Shadow Lembut)
+   ========================================================================== */
+.table-container {
+    background-color: var(--bg-white);
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-medium);
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    overflow-x: auto; /* Wajib: Scroll horizontal saat layar dipersempit */
+}
+
+.table-title, .schedule-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+/* Wajib: Tabel putih, border-radius 10px, box-shadow lembut */
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md); /* Wajib: border-radius 10px */
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);    /* Wajib: 0 4px 6px rgba(0,0,0,0.05) */
+    border: none;                      /* Wajib: Hilangkan garis tepi tebal */
+}
+
+/* Header Tabel Warna Aksen Biru Elegan */
+.standings-table th {
+    background-color: var(--primary-dark); /* Biru tua elegan */
+    color: var(--bg-white);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    padding: 1.1rem 1.25rem;
+    text-align: left;
+    border: none;
+}
+
+.standings-table td {
+    padding: 1.1rem 1.25rem;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid #f1f5f9; /* Garis pembatas sangat tipis dan bersih */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+/* Wajib: Warna latar selang-seling (Zebra Striping) sangat tipis */
+.standings-table tbody tr:nth-child(even) {
+    background-color: #f8fafc; /* Sangat tipis dan lembut */
+}
+
+.standings-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Hover Effect pada Baris Tabel */
+.standings-table tbody tr {
+    transition: var(--transition-smooth);
+}
+
+.standings-table tbody tr:hover {
+    background-color: var(--primary-light); /* Highlight biru pastel sangat lembut */
+}
+
+/* Penanda Posisi 1 */
+.rank-1 .cell-pos {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.flag-icon {
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+    vertical-align: -2px;
+}
+
+/* Jadwal Pertandingan Minimalis */
+.schedule-container {
+    background-color: var(--bg-white);
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.schedule-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.schedule-item {
+    padding: 1rem 1.25rem;
+    background-color: #f8fafc;
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--primary-color);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.match-date {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.match-teams {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+/* ==========================================================================
+   9. SECTION TUAN RUMAH (FLEXBOX LAYOUT CLEAN)
+   ========================================================================== */
+.host-grid {
+    display: flex;
+    flex-wrap: wrap; /* Wajib: Responsif */
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.host-card {
+    flex: 1 1 290px;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-xl);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: var(--transition-smooth);
+}
+
+.host-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.host-name {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.host-description {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   10. SECTION FAN ZONE (FORM PENDAFTARAN)
+   ========================================================================== */
+.fanzone-card {
+    background-color: var(--bg-white);
+    padding: 2.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-medium);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.fanzone-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Wajib: Tata letak rapi menggunakan Flexbox */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.required-star {
+    color: #e11d48; /* Crimson red untuk penanda wajib */
+}
+
+.form-input, .form-select {
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background-color: #f8fafc;
+    border: 1.5px solid #cbd5e1;
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    transition: var(--transition-smooth);
+    outline: none;
+    width: 100%;
+}
+
+.form-input:focus, .form-select:focus {
+    background-color: var(--bg-white);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12); /* Efek glow biru elegan */
+}
+
+.form-hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.form-actions {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit-btn {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bg-white);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   11. FOOTER ELEGAN & MINIMALIS
+   ========================================================================== */
+.site-footer {
+    background-color: var(--bg-white);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+}
+
+.disclaimer-text {
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   11. RESPONSIVITAS KETAT (MOBILE VIEW)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    /* Header & Navigasi Mobile */
+    .site-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .main-nav .nav-list {
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Layout Konten Mobile */
+    .hero-content {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.75rem;
+    }
+
+    .hero-content .image-wrapper,
+    .hero-content .article-body {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .section {
+        padding: 2rem 0; /* Tetap lega namun proporsional di mobile */
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    /* Tabel di Mobile: Bisa discroll tanpa merusak layout utama */
+    .table-container, .schedule-container {
+        padding: 1.25rem;
+    }
+
+    .standings-table th,
+    .standings-table td {
+        padding: 0.85rem 1rem;
+        font-size: 0.875rem;
+        white-space: nowrap; /* Mencegah teks tabel hancur berantakan di layar sempit */
+    }
+
+    /* Gambar mengecil secara proporsional */
+    img, .featured-image, .stadium-image {
+        height: 200px;
+        max-width: 100%;
+    }
+
+    /* Form Fan Zone di Mobile */
+    .fanzone-card {
+        padding: 1.5rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
